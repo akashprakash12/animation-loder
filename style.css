@@ -1,3 +1,6 @@
+:root{
+    --bg--color: rgb(0, 0, 0);
+}
 *{
     margin: 0%;
     padding: 0;
@@ -8,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgba(16, 16, 26, 0.898);
+    background-color:var(--bg--color);
 }
 .container{
     width: 100%;
@@ -16,12 +19,24 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-reflect: below 1px linear-gradient(#0001,#0004);
 }
 .container .loder{
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    background:rgba(14, 13, 13, 0.713);
+    animation: loderanimation 1.5s linear infinite;
+
+}
+@keyframes loderanimation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg) ;
+    }
 
 }
 .container .loder::before{
@@ -30,7 +45,6 @@ body{
     top: 0;
     left: 0;
     width: 50%;
-    background-color: salmon;
     height: 100%;
     background: linear-gradient(to top,transparent,rgba(0,255,249,0.7));
     background-size: 100px 180px;
@@ -49,8 +63,8 @@ body{
     background-color: rgb(29, 240, 229);
     border-radius: 50%;
     z-index: 10;
-    box-shadow: 0 0 10px  rgb(29, 240, 229),
-                0 0 20px rgb(29, 240, 229),
+    box-shadow: 0 0px 10px  rgb(29, 240, 229),
+                0 0px 20px rgb(29, 240, 229),
                 0 0 30px rgb(29, 240, 229),
                 0 0 40px rgb(29, 240, 229),
                 0 0 50px rgb(29, 240, 229),
@@ -64,5 +78,15 @@ body{
                 0 0 400px rgb(29, 240, 229),
                 0 0 500px rgba(29, 240, 229,0.4),
                 0 0 600px rgba(29, 240, 229,0.3);
+
+}
+.container .loder span{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    background-color: var(--bg--color);
 
 }
