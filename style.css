@@ -23,7 +23,7 @@ body{
 }
 .container .loder{
     position: relative;
-    width: 200px;
+    width: 200px;    
     height: 200px;
     border-radius: 50%;
     background:rgba(14, 13, 13, 0.713);
